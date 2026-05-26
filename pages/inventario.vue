@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted, computed } from 'vue'
-import { Plus, Edit, Trash2, Search, Building, X, Save, UploadCloud } from 'lucide-vue-next'
+import { Plus, Edit, Trash2, Search, Car, X, Save, UploadCloud } from 'lucide-vue-next'
 import { useSupabaseClient } from '#imports'
 import Sidebar from '~/components/Sidebar.vue'
 
@@ -36,7 +36,7 @@ const fetchProperties = async () => {
     if (error) throw error
     properties.value = data || []
   } catch (error) {
-    console.error('Erro ao listar imóveis:', error)
+    console.error('Erro ao listar pneus:', error)
   } finally {
     loadingList.value = false
   }
@@ -167,21 +167,21 @@ const handleSave = async () => {
     isSaving.value = false 
     closeModal()
   } catch (err: any) {
-    console.error('Erro ao salvar imóvel:', err)
+    console.error('Erro ao salvar pneu:', err)
     alert('Erro ao salvar: ' + err.message)
     isSaving.value = false
   }
 }
 
 const confirmDelete = async (id: number) => {
-  if (confirm('Tem certeza que deseja excluir este imóvel? Esta ação não pode ser desfeita.')) {
+  if (confirm('Tem certeza que deseja excluir este pneu? Esta ação não pode ser desfeita.')) {
     try {
       const { error } = await supabase.from('fotos_pneus').delete().eq('id', id)
       if (error) throw error
       properties.value = properties.value.filter(p => p.id !== id)
     } catch (e) {
       console.error(e)
-      alert('Erro ao deletar imóvel.')
+      alert('Erro ao deletar pneu.')
     }
   }
 }
@@ -195,12 +195,12 @@ const confirmDelete = async (id: number) => {
       <!-- Header -->
       <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
         <div>
-          <h1 class="text-3xl font-bold font-serif text-gray-900 dark:text-white tracking-wide">Inventário de Imóveis</h1>
-          <p class="text-gray-500 dark:text-gray-400 mt-1">Gerencie os imóveis cadastrados no sistema.</p>
+          <h1 class="text-3xl font-bold font-serif text-gray-900 dark:text-white tracking-wide">Inventário de Pneus</h1>
+          <p class="text-gray-500 dark:text-gray-400 mt-1">Gerencie os pneus cadastrados no sistema.</p>
         </div>
         <button @click="openCreateModal" class="flex items-center gap-2 bg-primary-500 text-white px-5 py-2.5 rounded-sm hover:bg-primary-600 transition-colors shadow-luxury">
           <Plus class="w-4 h-4" />
-          <span class="font-semibold uppercase tracking-widest text-xs">Novo Imóvel</span>
+          <span class="font-semibold uppercase tracking-widest text-xs">Novo Pneu</span>
         </button>
       </div>
 
@@ -213,7 +213,7 @@ const confirmDelete = async (id: number) => {
           <input 
             v-model="searchQuery" 
             type="text" 
-            placeholder="Buscar imóvel (Nome ou Descrição)..." 
+            placeholder="Buscar pneu (Nome ou Descrição)..." 
             class="block w-full pl-10 pr-3 py-2.5 border border-gray-200 dark:border-white/10 rounded-sm leading-5 bg-white dark:bg-dark-surface/50 backdrop-blur-md text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-primary-500 focus:border-primary-500 sm:text-sm transition-colors shadow-sm dark:shadow-none"
           >
         </div>
@@ -231,7 +231,7 @@ const confirmDelete = async (id: number) => {
           <table class="w-full text-left border-collapse">
             <thead>
               <tr class="bg-gray-50 dark:bg-white/5 text-gray-500 dark:text-gray-400 text-xs uppercase tracking-wider border-b border-gray-200 dark:border-white/5">
-                <th class="py-4 px-6 font-semibold">Imóvel & Foto</th>
+                <th class="py-4 px-6 font-semibold">Pneu & Foto</th>
                 <th class="py-4 px-6 font-semibold">Descrição</th>
                 <th class="py-4 px-6 font-semibold">Valor</th>
                 <th class="py-4 px-6 font-semibold text-right">Ações</th>
@@ -243,7 +243,7 @@ const confirmDelete = async (id: number) => {
                   <div class="flex items-center gap-4">
                     <div class="w-16 h-12 rounded-sm overflow-hidden border border-gray-200 dark:border-white/10 shrink-0 bg-gray-100 flex items-center justify-center text-gray-400">
                       <img v-if="property.url" :src="property.url" :alt="property.nome" class="w-full h-full object-cover" />
-                      <Building v-else class="w-5 h-5 opacity-50" />
+                      <Car v-else class="w-5 h-5 opacity-50" />
                     </div>
                     <div>
                       <p class="text-gray-900 dark:text-white font-medium">{{ property.nome }}</p>
@@ -271,8 +271,8 @@ const confirmDelete = async (id: number) => {
               </tr>
               <tr v-if="!loadingList && filteredProperties.length === 0">
                 <td colspan="4" class="py-12 text-center text-gray-400 dark:text-gray-500">
-                  <Building class="w-12 h-12 mx-auto mb-4 opacity-20" />
-                  <p>Nenhum imóvel cadastrado ou encontrado.</p>
+                  <Car class="w-12 h-12 mx-auto mb-4 opacity-20" />
+                  <p>Nenhum pneu cadastrado ou encontrado.</p>
                 </td>
               </tr>
             </tbody>
@@ -290,7 +290,7 @@ const confirmDelete = async (id: number) => {
         <!-- Modal Header -->
         <div class="px-6 py-4 border-b border-gray-200 dark:border-white/10 flex items-center justify-between sticky top-0 bg-white dark:bg-dark-card z-10">
           <h2 class="text-xl font-serif font-bold text-gray-900 dark:text-white">
-            {{ modalMode === 'create' ? 'Cadastrar Imóvel' : 'Atualizar Imóvel' }}
+            {{ modalMode === 'create' ? 'Cadastrar Pneu' : 'Atualizar Pneu' }}
           </h2>
           <button @click="closeModal" :disabled="isSaving" class="p-2 text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors disabled:opacity-50">
             <X class="w-5 h-5" />
@@ -301,9 +301,9 @@ const confirmDelete = async (id: number) => {
         <div class="p-6 overflow-y-auto flex-1 space-y-6">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             
-            <!-- Imagem do Imóvel (Upload via Storage) -->
+            <!-- Foto do Pneu (Upload via Storage) -->
              <div class="md:col-span-2">
-              <label class="block text-xs font-semibold uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-2">Foto do Imóvel</label>
+              <label class="block text-xs font-semibold uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-2">Foto do Pneu</label>
               
               <div 
                  @click="fileInput?.click()" 
@@ -311,7 +311,7 @@ const confirmDelete = async (id: number) => {
                >
                 <div class="space-y-1 text-center">
                   <div v-if="previewImage" class="mb-4">
-                     <img :src="previewImage" alt="Visualização do imóvel" class="mx-auto h-32 w-auto object-cover rounded-sm shadow-sm" />
+                     <img :src="previewImage" alt="Visualização do pneu" class="mx-auto h-32 w-auto object-cover rounded-sm shadow-sm" />
                   </div>
                   <UploadCloud v-else class="mx-auto h-12 w-12 text-gray-400" />
                   <div class="flex text-sm text-gray-600 dark:text-gray-400 justify-center">
@@ -326,8 +326,8 @@ const confirmDelete = async (id: number) => {
 
             <!-- Nome/Título -->
             <div class="md:col-span-2">
-              <label class="block text-xs font-semibold uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-2">Título do Imóvel</label>
-              <input v-model="formData.nome" type="text" placeholder="Ex: Apartamento duplex no Jardins" class="w-full bg-gray-50 dark:bg-dark-surface border border-gray-200 dark:border-white/10 rounded-sm px-4 py-2 text-gray-900 dark:text-white focus:outline-none focus:border-primary-500">
+              <label class="block text-xs font-semibold uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-2">Título do Pneu</label>
+              <input v-model="formData.nome" type="text" placeholder="Ex: Pneu Goodyear 175/70 R14" class="w-full bg-gray-50 dark:bg-dark-surface border border-gray-200 dark:border-white/10 rounded-sm px-4 py-2 text-gray-900 dark:text-white focus:outline-none focus:border-primary-500">
             </div>
 
             <!-- Valor -->
@@ -343,8 +343,8 @@ const confirmDelete = async (id: number) => {
 
             <!-- Descrição -->
             <div class="md:col-span-2">
-              <label class="block text-xs font-semibold uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-2">Descrição do Imóvel</label>
-              <textarea v-model="formData.descricao" rows="3" placeholder="Descrição detalhada do imóvel, número de quartos, banheiros, vagas, etc..." class="w-full bg-gray-50 dark:bg-dark-surface border border-gray-200 dark:border-white/10 rounded-sm px-4 py-2 text-gray-900 dark:text-white focus:outline-none focus:border-primary-500"></textarea>
+              <label class="block text-xs font-semibold uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-2">Descrição do Pneu</label>
+              <textarea v-model="formData.descricao" rows="3" placeholder="Descrição detalhada do pneu, marca, modelo, aro, índice de carga, etc..." class="w-full bg-gray-50 dark:bg-dark-surface border border-gray-200 dark:border-white/10 rounded-sm px-4 py-2 text-gray-900 dark:text-white focus:outline-none focus:border-primary-500"></textarea>
             </div>
 
           </div>
@@ -362,7 +362,7 @@ const confirmDelete = async (id: number) => {
             </template>
             <template v-else>
                <Save class="w-4 h-4" />
-               Salvar Imóvel
+               Salvar Pneu
             </template>
           </button>
         </div>

@@ -17,14 +17,14 @@ definePageMeta({
     <!-- Navbar Minimalista -->
     <header class="fixed top-0 inset-x-0 z-50 bg-dark-bg/80 backdrop-blur-md border-b border-white/5 transition-all duration-300">
       <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-        <h1 class="text-2xl font-bold tracking-widest uppercase font-serif">IMOVEL OS</h1>
+        <h1 class="text-2xl font-bold tracking-widest uppercase font-serif">TOPPNEUS</h1>
         
         <nav class="hidden md:flex items-center gap-8">
           <a href="#" class="text-sm tracking-widest uppercase text-gray-400 hover:text-white transition-colors">Portfólio</a>
           <a href="#" class="text-sm tracking-widest uppercase text-gray-400 hover:text-white transition-colors">Sobre Nós</a>
           <a href="#" class="text-sm tracking-widest uppercase text-gray-400 hover:text-white transition-colors">Contato</a>
           <button class="px-6 py-2 bg-primary-500 text-white text-sm font-semibold tracking-widest uppercase rounded-sm hover:bg-primary-600 transition-colors shadow-luxury">
-            Seu Imóvel
+            Seu Pneu
           </button>
         </nav>
       </div>
@@ -44,7 +44,7 @@ definePageMeta({
             <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-primary-600">exclusividade.</span>
           </h2>
           <p class="text-xl text-gray-400 font-light leading-relaxed mb-12 max-w-2xl">
-            Descubra uma curadoria impecável de propriedades de alto padrão disponíveis para locação nas localizações mais desejadas.
+            Descubra uma curadoria impecável de pneus de alto padrão disponíveis para locação nas localizações mais desejadas.
           </p>
         </div>
 
@@ -72,7 +72,7 @@ definePageMeta({
         <div class="flex items-end justify-between mb-12">
           <div>
             <span class="text-primary-500 text-sm font-semibold tracking-widest uppercase mb-2 block">Nosso Portfólio</span>
-            <h3 class="text-3xl font-serif font-bold">Imóveis Disponíveis</h3>
+            <h3 class="text-3xl font-serif font-bold">Pneus Disponíveis</h3>
           </div>
           <div class="hidden md:flex gap-4">
              <span class="text-gray-400 text-sm uppercase tracking-widest">Mostrando 6 exclusividades</span>
@@ -148,12 +148,12 @@ definePageMeta({
 
     <!-- Footer Minimalista -->
     <footer class="bg-black py-12 border-t border-white/5 text-center px-6">
-      <h2 class="text-2xl font-serif font-bold tracking-widest uppercase mb-6 text-white">IMOVEL OS</h2>
+      <h2 class="text-2xl font-serif font-bold tracking-widest uppercase mb-6 text-white">TOPPNEUS</h2>
       <p class="text-gray-500 text-sm max-w-md mx-auto leading-relaxed mb-8">
-        Curadoria das propriedades mais exclusivas para clientes que exigem a excelência.
+        Curadoria dos pneus mais exclusivos para clientes que exigem a excelência.
       </p>
       <div class="text-xs text-gray-600 uppercase tracking-widest">
-        &copy; 2026 IMOVEL OS. Todos os direitos reservados.
+        &copy; 2026 TOPPNEUS. Todos os direitos reservados.
       </div>
     </footer>
   </div>

@@ -59,7 +59,7 @@ onMounted(() => {
     <!-- Navbar -->
     <header class="fixed top-0 inset-x-0 z-50 bg-[#0a0a0a]/80 backdrop-blur-md border-b border-white/5">
       <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-        <h1 class="text-2xl font-bold tracking-widest uppercase font-serif">IMOVEL OS</h1>
+        <h1 class="text-2xl font-bold tracking-widest uppercase font-serif">TOPPNEUS</h1>
         <nav class="hidden md:flex items-center gap-8">
           <a href="#portfolio" class="text-sm tracking-widest uppercase text-gray-400 hover:text-white transition-colors">Portfólio</a>
           <a href="#contato" class="text-sm tracking-widest uppercase text-gray-400 hover:text-white transition-colors">Contato</a>
@@ -77,7 +77,7 @@ onMounted(() => {
           <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">exclusividade.</span>
         </h2>
         <p class="text-xl text-gray-400 font-light leading-relaxed mb-12 max-w-2xl">
-          Descubra uma curadoria impecável de propriedades selecionadas especialmente para você.
+          Descubra uma curadoria impecável de pneus selecionados especialmente para você.
         </p>
 
         <!-- Search Bar -->
@@ -106,10 +106,10 @@ onMounted(() => {
         <div class="flex items-end justify-between mb-12">
           <div>
             <span class="text-amber-500 text-sm font-semibold tracking-widest uppercase mb-2 block">Nosso Portfólio</span>
-            <h3 class="text-3xl font-serif font-bold">Imóveis Disponíveis</h3>
+            <h3 class="text-3xl font-serif font-bold">Pneus Disponíveis</h3>
           </div>
           <span class="hidden md:block text-gray-400 text-sm uppercase tracking-widest">
-            {{ filteredImoveis.length }} imóvel(eis)
+            {{ filteredImoveis.length }} pneu(s)
           </span>
         </div>
 
@@ -122,7 +122,7 @@ onMounted(() => {
         <!-- Empty -->
         <div v-else-if="!loading && filteredImoveis.length === 0" class="flex flex-col items-center justify-center py-32 gap-4 text-center">
           <Building class="w-16 h-16 text-gray-700" />
-          <p class="text-gray-400 text-lg">Nenhum imóvel encontrado neste catálogo.</p>
+          <p class="text-gray-400 text-lg">Nenhum pneu encontrado neste catálogo.</p>
         </div>
 
         <!-- Grid -->
@@ -194,12 +194,12 @@ onMounted(() => {
 
     <!-- Footer -->
     <footer id="contato" class="bg-black py-12 border-t border-white/5 text-center px-6">
-      <h2 class="text-2xl font-serif font-bold tracking-widest uppercase mb-6">IMOVEL OS</h2>
+      <h2 class="text-2xl font-serif font-bold tracking-widest uppercase mb-6">TOPPNEUS</h2>
       <p class="text-gray-500 text-sm max-w-md mx-auto leading-relaxed mb-8">
-        Curadoria das propriedades mais exclusivas para clientes que exigem excelência.
+        Curadoria dos pneus mais exclusivos para clientes que exigem excelência.
       </p>
       <div class="text-xs text-gray-600 uppercase tracking-widest">
-        &copy; 2026 IMOVEL OS. Todos os direitos reservados.
+        &copy; 2026 TOPPNEUS. Todos os direitos reservados.
       </div>
     </footer>
   </div>

@@ -12,7 +12,7 @@ const { mainMargin } = useSidebarState()
 const activeTab = ref<'disparo' | 'followup' | 'historico'>('disparo')
 const csvFile = ref<File | null>(null)
 const csvFileName = ref('')
-const message = ref('Olá, [Nome]! Tudo bem? Vi que você demonstrou interesse em nossas propriedades de alto padrão. Temos novos imóveis exclusivos que acabaram de entrar no portfólio. Gostaria de conhecer as novidades?')
+const message = ref('Olá, [Nome]! Tudo bem? Vi que você demonstrou interesse em nossos pneus de alto padrão. Temos novos pneus exclusivos que acabaram de entrar no portfólio. Gostaria de conhecer as novidades?')
 const selectedLeads = ref<string[]>([])
 const selectAll = ref(false)
 const sending = ref(false)
@@ -21,7 +21,7 @@ const sendComplete = ref(false)
 // Follow-up config
 const followupEnabled = ref(true)
 const followupDelay = ref('48')
-const followupMessage = ref('Oi! Passando para saber se conseguiu pensar sobre os imóveis que conversamos. Temos horários disponíveis esta semana para visitas presenciais. Posso te ajudar a encontrar o imóvel ideal? 🗝️')
+const followupMessage = ref('Oi! Passando para saber se conseguiu pensar sobre os pneus que conversamos. Temos horários disponíveis esta semana para instalação. Posso te ajudar a encontrar o pneu ideal? 🚗')
 const followupCount = ref('3')
 
 // Mock inactive leads

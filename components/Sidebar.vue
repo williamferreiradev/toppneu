@@ -9,13 +9,12 @@ import {
   UserCircle,
   BarChart3, 
   LogOut,
-  Building,
+  Car,
   ChevronsLeft,
   ChevronsRight,
   RefreshCw,
   Globe,
   Settings,
-  Car,
   CalendarDays
 } from 'lucide-vue-next'
 
@@ -85,17 +84,17 @@ const navigation = computed(() => [
     { name: 'Dashboard', icon: LayoutDashboard, route: '/dashboard' },
     { name: 'Negociações', icon: KanbanSquare, route: '/crm', badge: leadsCount.value > 0 ? String(leadsCount.value) : undefined },
     { name: 'Contatos', icon: Users, route: '/contatos' },
-    { name: 'Corretores', icon: UserCircle, route: '/corretores' },
-    { name: 'Visitas', icon: CalendarDays, route: '/agenda' },
+    { name: 'Vendedores', icon: UserCircle, route: '/corretores', pro: true },
+    { name: 'Visitas', icon: CalendarDays, route: '/agenda', pro: true },
   ]},
   { name: 'GESTÃO', items: [
-    { name: 'Imóveis', icon: Building, route: '/inventario' },
+    { name: 'Pneus', icon: Car, route: '/inventario' },
     { name: 'Conversas', icon: MessageSquare, route: '/chats' },
-    { name: 'Relatórios', icon: BarChart3, route: '/relatorios' },
-    { name: 'Reativar Interessados', icon: RefreshCw, route: '/reativacao' },
+    { name: 'Relatórios', icon: BarChart3, route: '/relatorios', pro: true },
+    { name: 'Reativar Interessados', icon: RefreshCw, route: '/reativacao', pro: true },
   ]},
   { name: 'ADMINISTRAÇÃO', items: [
-    { name: 'Catálogo Público', icon: Globe, route: '/catalogo', external: true },
+    { name: 'Catálogo Público', icon: Globe, route: '/catalogo', external: true, pro: true },
     { name: 'Configurações', icon: Settings, route: '/configuracoes' },
   ]}
 ])
@@ -116,11 +115,11 @@ const handleLogout = async () => {
     <div class="h-[72px] flex items-center border-b border-gray-100 dark:border-dark-border" :class="isCollapsed ? 'px-4 justify-center' : 'px-6 justify-between'">
       <div class="flex items-center gap-3 group cursor-pointer" :class="isCollapsed ? 'justify-center' : ''">
          <div class="w-10 h-10 rounded-sm bg-primary-500 flex items-center justify-center shadow-luxury sidebar-transition group-hover:scale-105 flex-shrink-0">
-            <Building class="w-5 h-5 text-white" />
+            <Car class="w-5 h-5 text-white" />
          </div>
          <div v-if="!isCollapsed" class="sidebar-text-transition overflow-hidden">
-           <span class="text-gray-900 dark:text-white font-bold text-lg tracking-tight block whitespace-nowrap">IMPÉRIO</span>
-           <span class="text-[11px] text-gray-400 dark:text-dark-muted font-medium whitespace-nowrap uppercase tracking-wider">Imóveis</span>
+           <span class="text-gray-900 dark:text-white font-bold text-lg tracking-tight block whitespace-nowrap">TOP</span>
+           <span class="text-[11px] text-gray-400 dark:text-dark-muted font-medium whitespace-nowrap uppercase tracking-wider">Pneus</span>
          </div>
       </div>
       <button 
@@ -146,7 +145,27 @@ const handleLogout = async () => {
         
         <ul class="space-y-1">
           <li v-for="item in section.items" :key="item.name">
+            <!-- PRO ITEM -->
+            <div 
+              v-if="(item as any).pro"
+              :class="[
+                'flex items-center rounded-sm text-sm font-medium text-gray-400 dark:text-gray-600 cursor-not-allowed opacity-60 sidebar-transition group relative border-l-2 border-transparent',
+                isCollapsed ? 'justify-center p-3' : 'gap-3 px-4 py-2.5'
+              ]"
+              :title="isCollapsed ? item.name + ' (Pró)' : undefined"
+            >
+              <component :is="item.icon" class="w-[18px] h-[18px] sidebar-transition flex-shrink-0" />
+              <span v-if="!isCollapsed" class="flex-1 sidebar-text-transition flex items-center justify-between">
+                <span>{{ item.name }}</span>
+                <span class="bg-gray-200 dark:bg-white/10 text-gray-500 dark:text-gray-400 text-[9px] font-bold px-1.5 py-0.5 rounded-sm uppercase tracking-wider">
+                  Pró
+                </span>
+              </span>
+            </div>
+
+            <!-- NORMAL ITEM -->
             <NuxtLink 
+              v-else
               :to="item.route" 
               :class="[
                 'flex items-center rounded-sm text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50/50 dark:hover:bg-white/5 sidebar-transition group relative border-l-2 border-transparent',

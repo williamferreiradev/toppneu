@@ -156,7 +156,7 @@ onUnmounted(() => {
                 {{ leads.length }} interessados
               </span>
             </h1>
-            <p class="text-gray-400 dark:text-dark-muted text-sm mt-0.5">Gerencie os interessados nos imóveis.</p>
+            <p class="text-gray-400 dark:text-dark-muted text-sm mt-0.5">Gerencie os interessados nos pneus.</p>
           </div>
         </div>
         

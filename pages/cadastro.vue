@@ -3,7 +3,7 @@
     <!-- Right Side - Branding (Real Estate Layout) -->
     <div class="hidden lg:flex lg:w-1/2 relative bg-gray-50 overflow-hidden order-last">
       <!-- Background Image - Use property/house image (user needs to change this locally) -->
-      <img src="/images/login-bg.png" alt="Império Imóveis CRM" class="absolute inset-0 w-full h-full object-cover object-center mix-blend-multiply opacity-30 grayscale-[50%]" />
+      <img src="/images/login-bg.png" alt="TOPPNEUS CRM" class="absolute inset-0 w-full h-full object-cover object-center mix-blend-multiply opacity-30 grayscale-[50%]" />
       
       <!-- Overlay Gradient - Blue & Yellow aesthetic -->
       <div class="absolute inset-0 bg-gradient-to-tr from-primary-900/90 via-primary-700/80 to-transparent mix-blend-multiply pointer-events-none"></div>
@@ -16,14 +16,14 @@
       <div class="relative z-10 w-full p-12 flex flex-col justify-between h-full items-end text-right">
         <div>
           <h1 class="text-4xl lg:text-5xl font-black text-white tracking-widest uppercase drop-shadow-md">
-            IMPÉRIO<span class="text-accent">IMÓVEIS</span>
+            TOP<span class="text-accent">PNEUS</span>
           </h1>
           <div class="h-1.5 w-32 bg-primary-500 mt-4 rounded-full shadow-[0_0_15px_rgba(0,83,155,0.8)] ml-auto"></div>
         </div>
 
         <div class="space-y-4">
           <p class="text-gray-100 text-lg max-w-md leading-relaxed ml-auto font-medium drop-shadow-sm">
-            Gestão exclusiva da sua Imobiliária. Acesse seu portfólio e domine o mercado.
+            Gestão exclusiva da sua Loja. Acesse seu inventário e domine o mercado.
           </p>
         </div>
       </div>
@@ -45,7 +45,7 @@
         <!-- Header -->
         <div class="text-center space-y-2 mb-10">
           <h2 class="text-3xl font-black text-gray-900 tracking-tight uppercase">Novo Cadastro</h2>
-          <p class="text-gray-500 font-medium">Libere seu acesso à plataforma imobiliária</p>
+          <p class="text-gray-500 font-medium">Libere seu acesso ao sistema da loja</p>
         </div>
 
         <!-- Form -->
@@ -53,8 +53,8 @@
           <div class="space-y-5">
             <BaseInput 
               v-model="form.fullName"
-              label="Nome do Corretor"
-              placeholder="Ex: João Corretor"
+              label="Nome do Vendedor"
+              placeholder="Ex: João Vendedor"
               type="text"
               :disabled="loading"
             />
@@ -62,7 +62,7 @@
             <BaseInput 
               v-model="form.email"
               label="Endereço de E-mail"
-              placeholder="corretor@imperioimoveis.com.br"
+              placeholder="vendedor@toppneus.com.br"
               type="email"
               :disabled="loading"
             />

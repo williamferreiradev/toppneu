@@ -79,7 +79,7 @@ const toggleStatus = () => {
                 <User class="w-5 h-5" />
               </div>
               <h2 class="text-xl font-bold text-gray-900 dark:text-white">
-                {{ corretor ? 'Editar Corretor' : 'Novo Corretor' }}
+                {{ corretor ? 'Editar Vendedor' : 'Novo Vendedor' }}
               </h2>
             </div>
             <button 
@@ -136,7 +136,7 @@ const toggleStatus = () => {
                   <div>
                     <h4 class="text-sm font-bold text-gray-900 dark:text-white">{{ formData.ativo ? 'Ativo' : 'Desativado' }}</h4>
                     <p class="text-xs text-gray-500 dark:text-dark-muted">
-                      {{ formData.ativo ? 'O corretor pode receber novos leads.' : 'O corretor não receberá novos leads.' }}
+                      {{ formData.ativo ? 'O vendedor pode receber novos leads.' : 'O vendedor não receberá novos leads.' }}
                     </p>
                   </div>
                 </div>

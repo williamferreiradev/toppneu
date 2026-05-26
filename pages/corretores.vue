@@ -152,8 +152,8 @@ const deleteCorretor = async (corretor: any) => {
     <main :class="[mainMargin, 'p-10 transition-all duration-300']">
       <!-- Header -->
       <header class="mb-8">
-        <h1 class="text-2xl font-bold text-gray-900 dark:text-white">Corretores</h1>
-        <p class="text-gray-400 dark:text-dark-muted text-sm mt-1">Lista de todos os corretores e suas atribuições</p>
+        <h1 class="text-2xl font-bold text-gray-900 dark:text-white">Vendedores</h1>
+        <p class="text-gray-400 dark:text-dark-muted text-sm mt-1">Lista de todos os vendedores e suas atribuições</p>
       </header>
 
       <!-- Main Card -->
@@ -165,7 +165,7 @@ const deleteCorretor = async (corretor: any) => {
             <div class="p-2 bg-primary-100 dark:bg-primary-900/40 rounded-xl">
               <UserCircle class="w-5 h-5 text-primary-600 dark:text-primary-500" />
             </div>
-            <h2 class="text-lg font-bold text-gray-900 dark:text-white">Diretório de Corretores</h2>
+            <h2 class="text-lg font-bold text-gray-900 dark:text-white">Diretório de Vendedores</h2>
           </div>
           <div class="flex items-center gap-2">
             <!-- Filter toggle -->
@@ -183,7 +183,7 @@ const deleteCorretor = async (corretor: any) => {
               class="flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 bg-primary-500 hover:bg-primary-600 text-white rounded-lg shadow-sm transition-colors"
             >
               <Plus class="w-3.5 h-3.5" />
-              Novo Corretor
+              Novo Vendedor
             </button>
 
             <span class="bg-gray-100 dark:bg-white/5 text-gray-700 dark:text-gray-300 text-xs font-bold px-3 py-1.5 rounded-full border border-gray-200 dark:border-white/10 shadow-inner ml-2">
@@ -224,7 +224,7 @@ const deleteCorretor = async (corretor: any) => {
             <input
               v-model="searchQuery"
               type="text"
-              placeholder="Buscar corretor por nome ou telefone..."
+              placeholder="Buscar vendedor por nome ou telefone..."
               class="w-full bg-white dark:bg-dark-surface border border-gray-300 dark:border-dark-border text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 rounded-xl pl-12 pr-4 py-3 text-sm flex-1 focus:outline-none focus:ring-1 focus:ring-primary-500 shadow-sm transition-all"
             />
           </div>
@@ -247,7 +247,7 @@ const deleteCorretor = async (corretor: any) => {
 
           <!-- Empty State -->
           <div v-else-if="filteredCorretores.length === 0" class="p-12 text-center">
-            <p class="text-gray-500 dark:text-dark-muted">Nenhum corretor encontrado</p>
+            <p class="text-gray-500 dark:text-dark-muted">Nenhum vendedor encontrado</p>
           </div>
 
           <!-- Corretor Rows -->
@@ -297,7 +297,7 @@ const deleteCorretor = async (corretor: any) => {
                     ? 'bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-200 dark:border-emerald-500/20 hover:bg-emerald-100 dark:hover:bg-emerald-500/20' 
                     : 'bg-red-50 dark:bg-red-500/10 text-red-600 dark:text-red-400 border-red-200 dark:border-red-500/20 hover:bg-red-100 dark:hover:bg-red-500/20'
                 ]"
-                :title="corretor.ativo ? 'Desativar Corretor' : 'Ativar Corretor'"
+                :title="corretor.ativo ? 'Desativar Vendedor' : 'Ativar Vendedor'"
               >
                 <Power class="w-3.5 h-3.5" />
                 {{ corretor.ativo ? 'Ativo' : 'Desativado' }}
@@ -309,7 +309,7 @@ const deleteCorretor = async (corretor: any) => {
               <button 
                 @click.stop="editCorretor(corretor)"
                 class="p-2 text-gray-400 hover:text-primary-500 hover:bg-primary-50 dark:hover:bg-primary-500/10 rounded-lg transition-colors"
-                title="Editar Corretor"
+                title="Editar Vendedor"
               >
                 <Pencil class="w-4 h-4" />
               </button>
@@ -318,7 +318,7 @@ const deleteCorretor = async (corretor: any) => {
               <button 
                 @click.stop="deleteCorretor(corretor)"
                 class="p-2 text-gray-400 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-500/10 rounded-lg transition-colors"
-                title="Excluir Corretor"
+                title="Excluir Vendedor"
               >
                 <Trash2 class="w-4 h-4" />
               </button>

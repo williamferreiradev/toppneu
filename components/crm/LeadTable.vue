@@ -29,7 +29,7 @@ const statusConfig: Record<CrmStatus, { label: string; color: string }> = {
             <th class="px-6 py-4 font-medium">Nome</th>
             <th class="px-6 py-4 font-medium">Telefone</th>
             <th class="px-6 py-4 font-medium">Status (CRM)</th>
-            <th class="px-6 py-4 font-medium">Cód. Imóvel</th>
+            <th class="px-6 py-4 font-medium">Cód. Pneu</th>
             <th class="px-6 py-4 font-medium">Modo</th>
             <th class="px-6 py-4 font-medium text-right">Ações</th>
           </tr>
@@ -61,7 +61,7 @@ const statusConfig: Record<CrmStatus, { label: string; color: string }> = {
               </span>
             </td>
 
-            <!-- Código Imóvel -->
+            <!-- Código Pneu -->
             <td class="px-6 py-4 text-sm text-gray-400 dark:text-dark-muted font-mono">
               {{ lead.metadata?.propertyCode || 'N/A' }}
             </td>

@@ -21,7 +21,7 @@ export const useMockData = () => {
             estagiokanbam: 'qualificando',
             created_at: new Date(Date.now() - 1000 * 60 * 60 * 2).toISOString(),
             metadata: {
-                notes: 'Buscando imóvel para a família em Alphaville. Altamente interessada em projeto contemporâneo.'
+                notes: 'Buscando jogo de pneus para a SUV da família. Altamente interessado em pneus Michelin.'
             }
         },
         {
@@ -112,7 +112,7 @@ export const useMockData = () => {
             estagiokanbam: 'Engajado',
             created_at: new Date(Date.now() - 1000 * 60 * 60 * 12).toISOString(),
             metadata: {
-                notes: 'Investidor interessado em imóvel de alto padrão para retrofit na região dos Jardins.'
+                notes: 'Cliente interessado em pneus de alto padrão para carro esportivo.'
             }
         }
     ]
@@ -173,13 +173,13 @@ export const useMockData = () => {
     }
 
     const mockSummaries: Record<string, string> = {
-        'mock-lead-1': '📋 **Resumo da Conversa — Helena Bittencourt**\n\n• Interesse: Mansão em Alphaville\n• Motivação: Buscando imóvel novo familiar para até 3 meses\n• Perfil do imóvel: Estilo contemporâneo e ensolarado\n• Valor do imóvel: R$ 15.000.000\n• Status: Visita técnica AGENDADA para quinta às 15h30\n• Temperatura: 🔥 Quente — urgência para a compra\n• Próximo passo: Apresentação da casa no local',
-        'mock-lead-2': '📋 **Resumo da Conversa — Alexandre Diniz**\n\n• Interesse: Cobertura Duplex no Jd. Europa\n• Motivação: Busca vista panorâmica e acabamento de altíssimo padrão\n• Demanda: Apartamento que tenha armários (Ornare)\n• Valor do imóvel: R$ 22.000.000\n• Status: Visita AGENDADA para amanhã às 14h\n• Temperatura: 🔥 Quente — compra imedia\n• Próximo passo: Visita do duplex e apresentação da documentação',
-        'mock-lead-3': '📋 **Resumo da Conversa — Isabelle Mello**\n\n• Interesse: Apartamento Studio (locação)\n• Locação mensal: R$ 8.500 no Itaim Bibi\n• Objeção: Detalhes de seguro fiança e fiador\n• Valor da operação: R$ 8.500 mensais + taxas\n• Status: AGUARDANDO retorno após falar com financeiro familiar\n• Temperatura: ⚠️ Morno — demanda real, mas trava de crédito existe\n• Próximo passo: Follow-up para oferecer ficha e análise hoje',
-        'mock-lead-4': '📋 **Resumo da Conversa — Roberto Drummond**\n\n• Interesse: Casa de Condomínio em Tamboré (locação)\n• Perfil: Locatário direto que adiantou o valor do 1º ano\n• Pagamento: Anual (via PIX) com isenção de fiador\n• Status: FECHADO ✅ — Emitindo contrato no DocuSign\n• Temperatura: 🔥🔥 Quente — Transação realizada\n• Próximo passo: Aguardar pagamento e protocolar entrega de chaves',
-        'mock-lead-5': '📋 **Resumo da Conversa — Henrique Toledo**\n\n• Interesse: Laje Corporativa na Faria Lima\n• Motivação: Nova sede corporativa Triple A\n• Situação: Pedido de no mínimo 400m²\n• Status: Aguardando verificação da planta e agendamento de call\n• Temperatura: 🔥 Quente — Operação de alta rentabilidade\n• Próximo passo: Reunião para apresentar Pátio Malzoni e B32',
-        'mock-lead-6': '📋 **Resumo da Conversa — Carolina Alcântara**\n\n• Interesse: Loft para locação perto do Ibirapuera\n• Dúvida: Comprar x Alugar na Vila Nova Conceição\n• Perspectiva: Ficar 2 anos na região\n• Status: Aguardando call do consultor ou agendamento de imovel.\n• Temperatura: ⚠️ Morno — Início de contato\n• Próximo passo: Conversar com corretor de locação',
-        'mock-lead-7': '📋 **Resumo da Conversa — Vicente Navarro**\n\n• Interesse: Compra de imóvel antigo linear para Retrofit (flip)\n• Background: Investidor do exterior, procurando grandes plantas (+400m²)\n• Soluções passadas: Rara cobertura de 510m² na Oscar Freire\n• Status: Visita AGENDADA p/ sexta 14h30\n• Temperatura: 🔥 Quente — Investidor pronto. Alta margem e rápida tomada de decisão\n• Próximo passo: Apresentar avaliação no local.',
+        'mock-lead-1': '📋 **Resumo da Conversa — Helena Bittencourt**\n\n• Interesse: Pneus para SUV\n• Motivação: Buscando pneu novo para viagem familiar\n• Perfil do produto: Alta durabilidade\n• Valor do jogo: R$ 5.000\n• Status: Instalação AGENDADA para quinta às 15h30\n• Temperatura: 🔥 Quente — urgência para a compra\n• Próximo passo: Apresentação do pneu no local',
+        'mock-lead-2': '📋 **Resumo da Conversa — Alexandre Diniz**\n\n• Interesse: Pneus Esportivos (Aro 20)\n• Motivação: Busca alta performance e aderência\n• Demanda: Pneu Michelin Pilot Sport\n• Valor do jogo: R$ 12.000\n• Status: Instalação AGENDADA para amanhã às 14h\n• Temperatura: 🔥 Quente — compra imediata\n• Próximo passo: Instalação e alinhamento',
+        'mock-lead-3': '📋 **Resumo da Conversa — Isabelle Mello**\n\n• Interesse: Pneus Econômicos (Aro 15)\n• Orçamento: R$ 1.500 no jogo\n• Objeção: Detalhes de parcelamento\n• Valor da operação: R$ 1.500\n• Status: AGUARDANDO retorno após falar com financeiro familiar\n• Temperatura: ⚠️ Morno — demanda real, mas trava de crédito existe\n• Próximo passo: Follow-up para oferecer ficha e análise hoje',
+        'mock-lead-4': '📋 **Resumo da Conversa — Roberto Drummond**\n\n• Interesse: Jogo de Rodas e Pneus Premium\n• Perfil: Cliente direto que adiantou o valor\n• Pagamento: À vista (via PIX)\n• Status: FECHADO ✅ — Emitindo nota fiscal\n• Temperatura: 🔥🔥 Quente — Transação realizada\n• Próximo passo: Aguardar pagamento e agendar instalação',
+        'mock-lead-5': '📋 **Resumo da Conversa — Henrique Toledo**\n\n• Interesse: Pneus para frota corporativa\n• Motivação: Frota de 10 carros na Faria Lima\n• Situação: Pedido de no mínimo 40 pneus\n• Status: Aguardando verificação do estoque e agendamento de call\n• Temperatura: 🔥 Quente — Operação de alto volume\n• Próximo passo: Reunião para apresentar proposta em lote',
+        'mock-lead-6': '📋 **Resumo da Conversa — Carolina Alcântara**\n\n• Interesse: Dúvida sobre vida útil de pneus\n• Dúvida: Comprar pneu misto x rodoviário\n• Perspectiva: Viajar 2 vezes por mês\n• Status: Aguardando call do vendedor ou visita na loja.\n• Temperatura: ⚠️ Morno — Início de contato\n• Próximo passo: Conversar com consultor técnico',
+        'mock-lead-7': '📋 **Resumo da Conversa — Vicente Navarro**\n\n• Interesse: Compra de pneus off-road\n• Background: Piloto de rally\n• Soluções passadas: Pneu BFGoodrich All-Terrain\n• Status: Instalação AGENDADA p/ sexta 14h30\n• Temperatura: 🔥 Quente — Cliente pronto. Alta margem e rápida tomada de decisão\n• Próximo passo: Apresentar avaliação no local.',
     }
 
     const mockWeeklyMetrics: Record<string, any> = {

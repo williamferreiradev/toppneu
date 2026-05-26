@@ -19,7 +19,7 @@ const property = computed(() => properties.value.find((p: any) => p.id === prope
 
 const getWhatsAppLink = () => {
   if (!property.value) return ''
-  const text = `Olá! Gostaria de agendar uma visita para o imóvel: *${property.value.title}* (Cód: ${property.value.id}).`
+  const text = `Olá! Gostaria de agendar uma instalação para o pneu: *${property.value.title}* (Cód: ${property.value.id}).`
   return `https://wa.me/5511999999999?text=${encodeURIComponent(text)}`
 }
 
@@ -38,7 +38,7 @@ definePageMeta({
             <ArrowLeft class="w-4 h-4" />
             Voltar ao Portfólio
           </NuxtLink>
-          <h1 class="text-xl font-bold tracking-widest uppercase font-serif text-white">IMOVEL OS</h1>
+          <h1 class="text-xl font-bold tracking-widest uppercase font-serif text-white">TOPPNEUS</h1>
         </div>
       </header>
 
@@ -131,7 +131,7 @@ definePageMeta({
 
           <!-- Description -->
           <div>
-             <h3 class="text-2xl font-serif mb-6 text-white border-b border-white/5 pb-4">Sobre o Imóvel</h3>
+             <h3 class="text-2xl font-serif mb-6 text-white border-b border-white/5 pb-4">Sobre o Pneu</h3>
              <div class="text-lg text-gray-400 space-y-4 font-light leading-relaxed">
                <p v-for="(paragraph, i) in property.description.split('\n\n')" :key="i">
                  {{ paragraph }}
@@ -180,7 +180,7 @@ definePageMeta({
               Agendar Visita
             </a>
             
-            <p class="text-center text-[10px] text-gray-500 uppercase tracking-widest mt-4">Atendimento Exclusivo IMOVEL OS</p>
+            <p class="text-center text-[10px] text-gray-500 uppercase tracking-widest mt-4">Atendimento Exclusivo TOPPNEUS</p>
           </div>
         </div>
 
@@ -188,14 +188,14 @@ definePageMeta({
 
       <!-- Footer Minimalista -->
       <footer class="bg-black py-12 border-t border-white/5 text-center px-6">
-        <h2 class="text-2xl font-serif font-bold tracking-widest uppercase mb-6 text-white">IMOVEL OS</h2>
+        <h2 class="text-2xl font-serif font-bold tracking-widest uppercase mb-6 text-white">TOPPNEUS</h2>
         <div class="text-xs text-gray-600 uppercase tracking-widest">
-          &copy; 2026 IMOVEL OS. Negociações em Alto Padrão.
+          &copy; 2026 TOPPNEUS. Negociações em Alto Padrão.
         </div>
       </footer>
     </div>
     <div v-else class="min-h-screen flex flex-col items-center justify-center p-6 text-center">
-      <h2 class="text-2xl font-serif font-bold mb-4">Imóvel não encontrado</h2>
+      <h2 class="text-2xl font-serif font-bold mb-4">Pneu não encontrado</h2>
       <NuxtLink to="/imoveis" class="text-primary-500 hover:underline uppercase tracking-widest text-xs font-semibold">
         Voltar ao Portfólio
       </NuxtLink>

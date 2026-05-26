@@ -239,7 +239,7 @@ onMounted(() => {
       <header class="flex justify-between items-center mb-10">
         <div>
           <h1 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white font-serif">Dashboard</h1>
-          <p class="text-gray-400 dark:text-dark-muted mt-1 text-sm">Visão geral da sua imobiliária.</p>
+          <p class="text-gray-400 dark:text-dark-muted mt-1 text-sm">Visão geral da sua loja.</p>
         </div>
         
         <div class="flex items-center gap-4">
@@ -276,7 +276,7 @@ onMounted(() => {
               <TrendingUp class="w-5 h-5" />
             </div>
           </div>
-          <p class="text-xs text-gray-400 dark:text-dark-muted">Visitas aos imóveis pendentes</p>
+          <p class="text-xs text-gray-400 dark:text-dark-muted">Visitas aos pneus pendentes</p>
         </div>
 
         <!-- Card 3: Novos (7 dias) -->

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue'
-import { Search, ChevronRight, Building } from 'lucide-vue-next'
+import { Search, ChevronRight, Package } from 'lucide-vue-next'
 import { useSupabaseClient } from '#imports'
 
 definePageMeta({ layout: 'empty' })
@@ -38,7 +38,7 @@ const fetchProperties = async () => {
     if (error) throw error
     properties.value = data || []
   } catch (err) {
-    console.error('Erro ao buscar imóveis do catálogo:', err)
+    console.error('Erro ao buscar pneus do catálogo:', err)
   } finally {
     loading.value = false
   }
@@ -55,7 +55,7 @@ onMounted(() => {
     <!-- Navbar -->
     <header class="fixed top-0 inset-x-0 z-50 bg-[#0a0a0a]/80 backdrop-blur-md border-b border-white/5">
       <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-        <h1 class="text-2xl font-bold tracking-widest uppercase shadow-sm">IMPÉRIO<span class="text-accent">IMÓVEIS</span></h1>
+        <h1 class="text-2xl font-bold tracking-widest uppercase shadow-sm">TOP<span class="text-accent">PNEUS</span></h1>
         <nav class="hidden md:flex items-center gap-8">
           <a href="#showroom" class="text-sm tracking-widest uppercase text-gray-400 hover:text-white transition-colors">Showroom</a>
           <a href="#contato" class="text-sm tracking-widest uppercase text-gray-400 hover:text-white transition-colors">Contato</a>
@@ -73,7 +73,7 @@ onMounted(() => {
           <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-primary-600">espaço.</span>
         </h2>
         <p class="text-xl text-gray-400 font-light leading-relaxed mb-12 max-w-2xl">
-          Descubra uma curadoria impecável de imóveis de alto padrão selecionados para você.
+          Descubra uma curadoria impecável de pneus de alto padrão selecionados para você.
         </p>
 
         <!-- Search Bar -->
@@ -102,10 +102,10 @@ onMounted(() => {
         <div class="flex items-end justify-between mb-12">
           <div>
             <span class="text-primary-500 text-sm font-semibold tracking-widest uppercase mb-2 block">Nosso Showroom</span>
-            <h3 class="text-3xl font-bold tracking-tight">Imóveis Disponíveis</h3>
+            <h3 class="text-3xl font-bold tracking-tight">Pneus Disponíveis</h3>
           </div>
           <span class="hidden md:block text-gray-400 text-sm uppercase tracking-widest">
-            {{ filteredProperties.length }} imóvel(is)
+            {{ filteredProperties.length }} pneu(s)
           </span>
         </div>
 
@@ -117,8 +117,8 @@ onMounted(() => {
 
         <!-- Empty -->
         <div v-else-if="!loading && filteredProperties.length === 0" class="flex flex-col items-center justify-center py-32 gap-4 text-center">
-          <Building class="w-16 h-16 text-gray-700" />
-          <p class="text-gray-400 text-lg">Nenhum imóvel disponível no showroom.</p>
+          <Package class="w-16 h-16 text-gray-700" />
+          <p class="text-gray-400 text-lg">Nenhum pneu disponível no showroom.</p>
         </div>
 
         <!-- Grid -->
@@ -138,7 +138,7 @@ onMounted(() => {
                 :alt="property.nome"
                 class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-in-out"
               />
-              <Building v-else class="w-16 h-16 text-gray-600 absolute" />
+              <Package v-else class="w-16 h-16 text-gray-600 absolute" />
 
               <div class="absolute top-4 left-4 z-20">
                  <span class="bg-black/50 backdrop-blur-md text-white text-[10px] uppercase tracking-widest px-3 py-1.5 rounded-sm border border-white/10">
@@ -172,7 +172,7 @@ onMounted(() => {
             href="#contato"
             class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-transparent border border-white/20 text-white text-sm font-semibold tracking-widest uppercase rounded-sm hover:bg-white hover:text-black transition-all duration-300"
           >
-            Falar com Corretor
+            Falar com Vendedor
             <ChevronRight class="w-4 h-4" />
           </a>
         </div>
@@ -181,12 +181,12 @@ onMounted(() => {
 
     <!-- Footer -->
     <footer id="contato" class="bg-black py-12 border-t border-white/5 text-center px-6">
-      <h2 class="text-2xl font-bold tracking-widest uppercase mb-6">IMPÉRIO<span class="text-accent">IMÓVEIS</span></h2>
+      <h2 class="text-2xl font-bold tracking-widest uppercase mb-6">TOP<span class="text-accent">PNEUS</span></h2>
       <p class="text-gray-500 text-sm max-w-md mx-auto leading-relaxed mb-8">
         Plataforma premium entregando excelência e sofisticação.
       </p>
       <div class="text-xs text-gray-600 uppercase tracking-widest">
-        &copy; 2026 Império Imóveis. Todos os direitos reservados.
+        &copy; 2026 TOPPNEUS. Todos os direitos reservados.
       </div>
     </footer>
   </div>

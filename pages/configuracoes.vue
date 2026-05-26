@@ -98,7 +98,7 @@ const openConfig = async (configType: string) => {
     } 
     
     else if (configType === 'system') {
-      const { data, error } = await supabase.from('sistemaconfiguracao').select('*').limit(1).single()
+      const { data, error } = await supabase.from('sistemaConfiguracao').select('*').limit(1).single()
       if (error && error.code !== 'PGRST116') throw error // PGRST116 is "No rows found"
       if (data) {
         sistemaConfig.value = { ...data }
@@ -226,11 +226,11 @@ const saveSystem = async () => {
     
     if (sistemaConfig.value.id) {
        // Update
-       const { error } = await supabase.from('sistemaconfiguracao').update(payload).eq('id', sistemaConfig.value.id)
+       const { error } = await supabase.from('sistemaConfiguracao').update(payload).eq('id', sistemaConfig.value.id)
        if (error) throw error
     } else {
        // Insert
-       const { error } = await supabase.from('sistemaconfiguracao').insert(payload)
+       const { error } = await supabase.from('sistemaConfiguracao').insert(payload)
        if (error) throw error
     }
     alert('Configurações do sistema salvas com sucesso!')

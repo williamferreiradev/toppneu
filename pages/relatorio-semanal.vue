@@ -153,8 +153,8 @@ const fetchData = async () => {
           }
           
           if (agendamentos > 0) {
-            destaques.push(`📅 ${agendamentos} visita(s) ou agendamento(s) ativo(s).`)
-            conselhos.push('Prepare material detalhado do imóvel (fotos, vídeos) antes das visitas agendadas.')
+            destaques.push(`📅 ${agendamentos} orçamento(s) ou instalação(ões) ativa(s).`)
+            conselhos.push('Prepare material detalhado do pneu (fotos, vídeos) antes das instalações agendadas.')
           }
 
           if (conselhos.length === 0) {
@@ -312,7 +312,7 @@ onMounted(() => fetchData())
 
         <!-- Base info -->
         <div class="text-center text-[11px] text-gray-400 dark:text-dark-muted py-4">
-          Relatório gerado com base em {{ currentMetrics.totalLeads || 0 }} leads · Império Imóveis
+          Relatório gerado com base em {{ currentMetrics.totalLeads || 0 }} leads · TOPPNEUS
         </div>
       </template>
     </main>

@@ -166,8 +166,8 @@ const currentReport = computed(() => {
     }
     
     if (agendamentos > 0) {
-      destaques.push(`📅 ${agendamentos} visita(s) ou agendamento(s) ativo(s).`)
-      conselhos.push('Prepare material detalhado do imóvel (fotos, vídeos) antes das visitas agendadas.')
+      destaques.push(`📅 ${agendamentos} orçamento(s) ou instalação(ões) ativa(s).`)
+      conselhos.push('Prepare material detalhado do pneu (fotos, vídeos) antes das instalações agendadas.')
     }
 
     if (conselhos.length === 0) {
@@ -407,7 +407,7 @@ const fetchData = async () => {
           appointmentActivities.push({
             id: `apt-${apt.id}`,
             type: 'meeting_scheduled',
-            text: `Visita ou agendamento de reunião agendado com o lead: ${leadName}`,
+            text: `Visita ou orçamento agendado com o lead: ${leadName}`,
             time: apt.created_at,
             week: weekStart
           })
