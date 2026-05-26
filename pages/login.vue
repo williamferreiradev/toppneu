@@ -77,11 +77,7 @@
           </BaseButton>
         </form>
 
-        <!-- Footer -->
-        <div class="text-center text-sm text-gray-500 mt-8 pt-8 border-t border-gray-100">
-          Não possui credenciais? 
-          <NuxtLink to="/cadastro" class="font-bold text-primary-600 hover:text-primary-700 transition-colors">Solicite à Gerência</NuxtLink>
-        </div>
+
       </div>
     </div>
   </div>
